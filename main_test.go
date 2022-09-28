@@ -13,10 +13,10 @@ import (
 func Router() *mux.Router {
 	router := mux.NewRouter()
 	router.HandleFunc("/", function.CreateItem).Methods("GET")
-	router.HandleFunc("/movie/{id}", function.ReadingItemid).Methods("GET")
+	router.HandleFunc("/movie/1", function.ReadingItemid).Methods("GET")
 	router.HandleFunc("/movie", function.CreateItem).Methods("POST")
-	router.HandleFunc("/movie/{id}", function.UpdateItems).Methods("PUT")
-	router.HandleFunc("/movie/{id}", function.Softdelete).Methods("DELETE")
+	router.HandleFunc("/movie/2", function.UpdateItems).Methods("PUT")
+	router.HandleFunc("/movie/2", function.Softdelete).Methods("DELETE")
 	return router
 }
 
