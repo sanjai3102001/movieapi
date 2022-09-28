@@ -14,10 +14,10 @@ func main() {
 	r := mux.NewRouter()
 	// CreateTablee()
 	r.HandleFunc("/", function.CreateItem).Methods("GET")
-	r.HandleFunc("/movie/{id}", function.ReadingItemid).Methods("GET")
+	r.HandleFunc("/movie/2", function.ReadingItemid).Methods("GET")
 	r.HandleFunc("/movie", function.CreateItem).Methods("POST")
-	r.HandleFunc("/movie/{id}", function.UpdateItems).Methods("PUT")
-	r.HandleFunc("/movie/{id}", function.Softdelete).Methods("DELETE")
+	r.HandleFunc("/movie/1", function.UpdateItems).Methods("PUT")
+	r.HandleFunc("/movie/1", function.Softdelete).Methods("DELETE")
 	log.Fatal(http.ListenAndServe("Localhost:5000", r))
 
 }
